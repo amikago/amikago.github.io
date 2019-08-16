@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>{{ page.title }}</title>
+        <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="/magnific-popup/magnific-popup.css">
+        <link rel="stylesheet" href="/main.css" type="text/css" />
+    </head>
+    <body>
+        <nav>
+            <a href="{{ site.url }}">clare liu</a>
+            <ul>
+                <li><a href="/projects">projects</a></li>
+                <li><a href="/illustration">illustration</a></li>
+                <li><a href="/about">about</a></li>
+            </ul>
+        </nav>
+        
+        {{content}}
+        
+        <footer>
+            <div>
+                handcrafted with &#10084; by crate
+            </div>
+        </footer>
+
+        <!-- magnific popup -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="/magnific-popup/jquery.magnific-popup.js"></script>
+        <script>
+        $(document).ready(function() {
+            $('.popup-gallery').magnificPopup({
+                delegate: 'a',
+                type: 'image',
+                tLoading: 'Loading image #%curr%...',
+                mainClass: 'mfp-img-mobile',
+                gallery: {
+                    enabled: true,
+                    navigateByImgClick: true,
+                    preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+                },
+                image: {
+                    tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+                    titleSrc: function(item) {
+                        return item.el.attr('title');
+                    }
+                }
+            });
+        });
+        </script>
+    </body>
+
+</html>

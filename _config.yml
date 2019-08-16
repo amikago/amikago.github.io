@@ -1,0 +1,10 @@
+name: clare liu
+markdown: kramdown
+url: "https://clare.today"
+
+exclude:
+  - README.md
+  - .gitignore
+  - Gemfile
+  - Gemfile.lock
+  - CNAME

@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500,500i,300,300i|DM+Sans:400,400i,700');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #f2f2f2;
+  font-family: "Montserrat", sans-serif;
+  color: #3e3d43;
+}
+
+section {
+  padding: 32px;
+  margin: 3px;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: 300;
+  padding-top: 20px;
+  padding-bottom: 7px;
+}
+
+#posts h1 {
+  font-size:2.5em;
+  font-weight: 500;
+  margin: 0px;
+  padding: 0px;
+}
+
+h2 {
+  font-size: 1.15em;
+  font-weight: 300;
+  color: #919191;
+}
+
+#posts h2 {
+  font-size: 1.25em;
+  font-weight: 500;
+  font-style: italic;
+  color: #aaa8a8;
+  margin: 0 0 30px;
+}
+
+h3 {
+  font-size: 0.85em;
+  font-weight: 300;
+  padding-bottom: 10px;
+}
+
+#posts h3 {
+  font-size: 1.75em;
+  font-weight: 500;
+  color: #919191;
+  padding: 20px 0 0;
+}
+
+figure {
+  padding: 10px 0;
+  text-align:center;
+}
+
+figcaption {
+  font-size: .7em;
+  font-weight: 300;
+  color: #919191;
+  font-style: italic;
+}
+
+p {
+  font-size: .93em;
+  font-weight: 300;
+  padding: 7px 0px
+}
+
+#posts p {
+  font-size: 0.85em;
+  font-family: "DM Sans";
+  line-height: 150%;
+}
+
+a {
+  text-decoration: none;
+  color: #3e3d43;
+}
+
+#posts a {
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #dda85c;
+}
+
+ul {
+  list-style: none;
+}
+
+nav ul {
+  display: inline-block;
+  margin-left: auto;
+  text-align: right;
+}
+
+nav li {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+ol {
+  font-size: 0.85em;
+  font-family: "DM Sans";
+  line-height: 150%;
+  padding: 7px 40px;
+}
+
+nav {
+  align-items: center;
+  display: flex;
+  font-size: 1em;
+  font-weight: 300;
+  color: #3e3d43;
+  padding: 20px 10px;
+
+}
+
+footer {
+  text-align: center;
+  font-size: 0.7em;
+  font-weight: 300;
+  color: #919191;
+  padding: 20px;
+}
+
+.landing {
+    margin: 40px 0px 0px;
+}
+
+.landing_nav {
+  font-weight: 300;
+  font-size: 1.65em;
+  padding: 27px calc((100% - 860px) / 2);
+  text-align: center;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.center_2 {
+  display: inline;
+  vertical-align: middle;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.responsive {
+  width: 65%;
+}
+
+/*for projects & illustration page grids*/
+.square-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.square {
+  position: relative;
+  flex-basis: 80%;
+  margin: 5px;
+}
+
+#projects .square::before, #illustration .square::before {
+  content: '';
+  display: block;
+  padding-top: 100%;
+  transform: translate3d(0, 0, 0);
+}
+
+.square .content {
+  position: absolute;
+  top: 0; left: 0;
+  height: 100%;
+  width: 100%;
+  -webkit-backface-visibility: hidden;
+}
+
+.overlay{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #3e3d43;
+}
+
+.square:hover .overlay{
+  opacity: .95;
+}
+
+.overlay-title {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/*for centered columns*/
+.row {
+  display: flex;
+  align-items: center;
+}
+
+.column {
+  flex: 50%;
+  padding: 5px;
+}
+
+#posts .row {
+  align-items: start;
+}
+
+#posts .row p {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: .85em;
+  line-height: 100%;
+  color: #3e3d43;
+}
+
+/* above code optimized for mobile device, below are adjustments for full-screen */
+@media only screen and (min-width: 630px) {
+
+  h3 {
+    font-size: 1em;
+  }
+
+  ol {
+    font-size: 1em;
+  }
+
+  #posts p {
+    font-size: 1em;
+  }
+
+  section {
+    padding: 32px calc((100% - 760px) / 2)
+  }
+
+  nav {
+    padding: 20px 40px;
+  }
+
+  .square-container {
+    justify-content: flex-start;
+  }
+
+  #about .square-container, #posts .square-container {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .square {
+    position: relative;
+    flex-basis: calc(33.333% - 10px);
+    margin: 5px;
+  }
+
+  .landing_nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  
+}
